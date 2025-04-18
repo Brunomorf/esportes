@@ -85,20 +85,80 @@ footer p {
 }
 
 /* === RESPONSIVIDADE (ESSENCIAL) === */
+/* ===== AJUSTES ESPECÍFICOS PARA CELULAR ===== */
 @media (max-width: 768px) {
+  
+  /* 1. CORREÇÃO DE PROPORÇÕES */
+  body {
+    font-size: 14px; /* Texto mais legível */
+    padding: 0 10px; /* Margens laterais */
+  }
+  
+  /* 2. HEADER COMPACTO */
+  header {
+    padding: 10px 0;
+  }
+  
+  .logo {
+    font-size: 24px; /* Reduz tamanho do logo */
+  }
+  
+  .bolatenis {
+    width: 30px;
+    height: 30px; /* Ícone proporcional */
+  }
+  
+  /* 3. MENU VERTICAL */
   header ul {
     flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  header ul li a {
+    font-size: 16px;
+    padding: 8px;
+    display: block; /* Ocupa toda a largura */
+  }
+  
+  /* 4. GALERIA EM UMA COLUNA */
+  .gallery {
+    grid-template-columns: 1fr !important; /* Força 1 coluna */
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .gallery-item {
+    border-radius: 15px; /* Menos arredondado */
+  }
+  
+  .gallery img {
+    height: 150px; /* Altura fixa para uniformidade */
+  }
+  
+  /* 5. AJUSTE DE IMAGEM DESTAQUE */
+  .pordosol img {
+    max-width: 95%;
+    border-radius: 15px; /* Coerência com o resto */
+    animation: none; /* Remove animação em mobile */
+  }
+  
+  /* 6. FOOTER COMPACTO */
+  footer {
+    padding: 15px 10px;
+  }
+  
+  footer p {
+    font-size: 12px;
+  }
+  
+  /* 7. ÍCONES SOCIAIS CENTRALIZADOS */
+  .social-icons {
+    justify-content: center;
     gap: 10px;
-    align-items: center;
   }
-
-  .gallery {
-    grid-template-columns: 1fr 1fr; /* 2 colunas em mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+  
+  .social-icons a {
+    font-size: 24px;
   }
 }
