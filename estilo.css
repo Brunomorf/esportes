@@ -1,224 +1,214 @@
-/* === VARIÁVEIS DE CORES/TIPOGRAFIA === */
-:root {
-  --primary: #2e7d32; /* Verde mais profissional */
-  --secondary: #d32f2f; /* Vermelho para destaques */
-  --dark: #010300;
-  --light: #dbe7d4;
-  --background: #f8f9fa; /* Fundo mais suave */
-  --text: #333333; /* Texto mais legível */
-  --font-main: 'Poppins', Arial, sans-serif; /* Fonte moderna */
-}
-
-/* === ESTILOS GERAIS === */
+como ficaria o .css /* Estilos gerais */
 body {
-  font-family: var(--font-main);
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
+  background-color: #dbe7d4;
+  color: #000000;
 }
 
-/* === HEADER MODERNO === */
-header {
-  background-color: var(--dark);
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
-.logo {
-  color: var(--light);
-  font-size: 2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.bolatenis {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s;
-}
-
-.logo:hover .bolatenis {
-  transform: rotate(360deg);
-}
-
-/* === MENU PRINCIPAL === */
-nav ul {
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav a {
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: var(--secondary);
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--secondary);
-  transition: width 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* === ÍCONES SOCIAIS === */
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
+/*icones cabeçalho*/
 .social-icons a {
-  color: var(--light);
-  font-size: 1.5rem;
-  transition: transform 0.3s, color 0.3s;
+  margin-right: 20px;
+  color: #dbe7d4;
+  font-size: 30px; /* Valor do tamanho do ícone */
 }
 
-.social-icons a:hover {
-  color: var(--secondary);
-  transform: translateY(-3px);
-}
 
-/* === GALERIA MODERNA === */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.gallery img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.5s;
-  border-radius: 12px 12px 0 0;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
+/* Texto dentro da foto */
 .foto-legenda {
   position: relative;
 }
 
+.foto-legenda img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.foto-legenda:hover img {
+  opacity: 0.8;
+}
+
 .foto-legenda figcaption {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.foto-legenda:hover figcaption {
+  opacity: 1;
+}
+
+.foto-legenda h4 {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  padding: 15px;
-  transform: translateY(100%);
-  transition: transform 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
-.gallery-item:hover figcaption {
-  transform: translateY(0);
+/* Estilos do cabeçalho */
+.bolatenis {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
 }
 
-/* === ANIMAÇÃO DESTAQUE === */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.pordosol {
-  animation: pulse 4s infinite;
-}
-
-/* === FOOTER === */
-footer {
-  background: var(--dark);
-  color: var(--light);
-  padding: 30px 0;
+header {
+  background-color: #010300;
+  padding: 10px;
   text-align: center;
-  margin-top: 50px;
+}
+
+header .logo {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+header ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+header ul li a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+header ul li a:hover {
+  color: #56cf10;
+}
+
+/*espaço entre ícones*/
+.social-icons a {
+  margin-right: 20px;
+  color: #dbe7d4;
+}
+
+/* Cor dos links */
+header ul li a {
+  color: #56cf10;
+  transition: color 0.3s ease-in-out;
+}
+
+header ul li a:hover {
+  color: #ee2208;
+}
+
+/* Estilos do conteúdo principal */
+main {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Estilos do rodapé */
+footer {
+  background-color: #010300;
+  padding: 20px;
+  text-align: center;
 }
 
 footer p {
   margin: 0;
-  font-size: 1rem;
+  color: #54f105;
+  font-size: 14px;
 }
 
-/* === RESPONSIVIDADE === */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 15px;
+/* Estilos específicos para o pordosol */
+.pordosol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pordosol img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 35%;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
-  
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-  
-  .pordosol img {
-    max-width: 95%;
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 }
 
-/* === EFEITOS DE CARREGAMENTO === */
-.fade-in {
-  animation: fadeIn 1s ease-in;
+/* Estilos da galeria de imagens */
+h1 {
+  text-align: center;
+  margin-top: 50px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  width: 25%; /* Para dividir em 4 colunas */
+  padding: 30px;
+}
+
+.gallery a {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 30%;
+}
+
+/* Estilos específicos para diferentes tamanhos de tela */
+
+/* Tamanhos de tela pequenos (celulares) */
+@media (max-width: 767px) {
+  .gallery-item {
+    width: 50%; /* Alterar para 1 coluna */
+  }
+}
+
+/* Tamanhos de tela médios (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-item {
+    width: 33.33%; /* Alterar para 3 colunas */
+  }
+}
+
+/* Tamanhos de tela grandes (PCs) */
+@media (min-width: 1024px) {
+  .gallery-item {
+    width: 25%; /* Manter 4 colunas */
+  }
 }
