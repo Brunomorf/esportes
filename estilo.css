@@ -1,4 +1,4 @@
-como ficaria o .css /* Estilos gerais */
+/* === ESTILOS GERAIS (MANTIDOS) === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,120 +7,75 @@ body {
   color: #000000;
 }
 
-
-
-/*icones cabeçalho*/
-.social-icons a {
-  margin-right: 20px;
-  color: #dbe7d4;
-  font-size: 30px; /* Valor do tamanho do ícone */
-}
-
-
-/* Texto dentro da foto */
-.foto-legenda {
-  position: relative;
-}
-
-.foto-legenda img {
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
-.foto-legenda:hover img {
-  opacity: 0.8;
-}
-
-.foto-legenda figcaption {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.foto-legenda:hover figcaption {
-  opacity: 1;
-}
-
-.foto-legenda h4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-/* Estilos do cabeçalho */
-.bolatenis {
-  position: absolute;
-  top: 40px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-}
-
+/* === HEADER (AJUSTES PONTUAIS) === */
 header {
   background-color: #010300;
-  padding: 10px;
-  text-align: center;
+  padding: 15px 0;
+  position: sticky; /* Fixa o menu no topo ao rolar */
+  top: 0;
+  z-index: 100;
 }
 
-header .logo {
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-}
-
+/* Menu centralizado e espaçamento melhorado */
 header ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Substitui margin-right antiga */
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
 }
 
-header ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
+/* Links com transição suave */
 header ul li a {
-  color: #fff;
-  font-size: 18px;
+  color: #56cf10;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-header ul li a:hover {
-  color: #56cf10;
-}
-
-/*espaço entre ícones*/
-.social-icons a {
-  margin-right: 20px;
-  color: #dbe7d4;
-}
-
-/* Cor dos links */
-header ul li a {
-  color: #56cf10;
-  transition: color 0.3s ease-in-out;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 header ul li a:hover {
   color: #ee2208;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Estilos do conteúdo principal */
-main {
+/* === GALERIA (MELHORIAS DE LAYOUT) === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Estilos do rodapé */
+.gallery-item {
+  background: white;
+  border-radius: 30%;
+  overflow: hidden; /* Para imagens respeitarem o border-radius */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Evita distorção de imagens */
+  display: block;
+}
+
+/* === FOOTER (MANTIDO) === */
 footer {
   background-color: #010300;
   padding: 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 footer p {
@@ -129,86 +84,21 @@ footer p {
   font-size: 14px;
 }
 
-/* Estilos específicos para o pordosol */
-.pordosol {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.pordosol img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-  border-radius: 35%;
-  animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* === RESPONSIVIDADE (ESSENCIAL) === */
+@media (max-width: 768px) {
+  header ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
-  50% {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .gallery {
+    grid-template-columns: 1fr 1fr; /* 2 colunas em mobile */
   }
 }
 
-/* Estilos da galeria de imagens */
-h1 {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.gallery-item {
-  width: 25%; /* Para dividir em 4 colunas */
-  padding: 30px;
-}
-
-.gallery a {
-  display: block;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 30%;
-}
-
-/* Estilos específicos para diferentes tamanhos de tela */
-
-/* Tamanhos de tela pequenos (celulares) */
-@media (max-width: 767px) {
-  .gallery-item {
-    width: 50%; /* Alterar para 1 coluna */
-  }
-}
-
-/* Tamanhos de tela médios (tablets) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .gallery-item {
-    width: 33.33%; /* Alterar para 3 colunas */
-  }
-}
-
-/* Tamanhos de tela grandes (PCs) */
-@media (min-width: 1024px) {
-  .gallery-item {
-    width: 25%; /* Manter 4 colunas */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
   }
 }
